@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
 import {
@@ -12,8 +10,10 @@ import {
 
 export default function NavBar() {
   return (
-    <nav className="flex w-full items-center justify-left border-b p-4 text-xl font-semibold">
-      <div className="pr-10 text-2xl">Card Vault</div>
+    <nav className="flex w-full items-center select-none justify-left border-b p-4 text-xl font-semibold">
+      <Link href="/" legacyBehavior passHref>
+        <div className="pr-10 text-2xl">Card Vault</div>
+      </Link>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
