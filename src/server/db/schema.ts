@@ -1,13 +1,9 @@
-// Example model schema from the Drizzle docs
-// https://orm.drizzle.team/docs/sql-schema-declaration
-
-import { sql } from "drizzle-orm";
 import {
-  index,
   pgTableCreator,
   serial,
+  text,
   timestamp,
-  varchar,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -18,19 +14,18 @@ import {
  */
 export const createTable = pgTableCreator((name) => `cardvault_${name}`);
 
-export const posts = createTable(
-  "post",
+export const cards = createTable(
+  "cards",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
-    createdAt: timestamp("created_at", { withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
-      () => new Date(),
-    ),
+    name: text("name").notNull(),
+    image: text("image").notNull(),
+    code: text("code").notNull(),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
   },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  }),
+  (cards) => {
+    return {
+      uniqueIdx: uniqueIndex("unique_idx").on(cards.code),
+    };
+  },
 );

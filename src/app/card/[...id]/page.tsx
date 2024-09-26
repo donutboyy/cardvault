@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { api } from "~/trpc/react";
 
 const mockCardImage = "https://d2h5owxb2ypf43.cloudfront.net/cards/ROS016.webp";
 const mockCardDetailsResponse = {
@@ -12,18 +15,8 @@ const mockCardDetailsResponse = {
   set: "Rosetta",
 };
 
-const mockCardDetails = Object.entries(mockCardDetailsResponse).map(
-  ([key, value]) => ({
-    fieldName: capitalizeFirstLetter(key),
-    fieldValue: value,
-  }),
-);
-
-function capitalizeFirstLetter(phrase: string) {
-  return phrase.charAt(0).toUpperCase() + phrase.slice(1);
-}
-
 export default function CardDetails() {
+  const cardQuery = api.card.get.useQuery();
   return (
     <div className="flex-col w-full items-center justify-center">
       <div className="flex text-3xl w-full items-center justify-center">
@@ -46,11 +39,12 @@ export default function CardDetails() {
         </div>
         <div className="flex-col px-20">
           <h2 className="text-xl py-4">Card Details:</h2>
-          {mockCardDetails.map((card, index) => (
-            <h3 className="text-lg" key={index}>
-              {card.fieldName}: {card.fieldValue}
-            </h3>
-          ))}
+          <h3 className="text-lg">Code: {cardQuery.data?.code}</h3>
+          <h3 className="text-lg">Name: {cardQuery.data?.name}</h3>
+          <h3 className="text-lg">Image: {cardQuery.data?.image}</h3>
+          <h3 className="text-lg">
+            createdAt: {cardQuery.data?.createdAt.toString()}
+          </h3>
         </div>
       </div>
     </div>
