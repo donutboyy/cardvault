@@ -23,7 +23,7 @@ jobs:
 
       - name: run eslint
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL}}
         run: npm run lint
 
       - name: run prettier
