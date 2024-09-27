@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  DATABASE_URL: ${{ secrets.MAIN_DB_URL }}
+
 jobs:
   lint:
     name: lint

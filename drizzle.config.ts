@@ -6,7 +6,7 @@ export default {
   schema: "./src/server/db/schema.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: env.POSTGRES_URL,
+    url: env.DATABASE_URL,
   },
   tablesFilter: ["cardvault_*"],
   verbose: true,
