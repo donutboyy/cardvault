@@ -17,6 +17,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.9.5",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@t3-oss/env-nextjs": "^0.10.1",
