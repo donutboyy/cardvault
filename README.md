@@ -12,6 +12,11 @@ MVP: Ability to search up cards and view their data
 - [x] Attach database to ui
 - [x] Make it deploy
 - [ ] Set up database with card data
+  - [ ] Basic cards schema
+  - [ ] Set up testing environment
+  - [ ] Set up github actions to run tests on PR + coverage
+  - [ ] Add rest of the card relations + tests
+  - [ ] Upload real card data from fabrary/cards
 - [ ] Create endpoints
   - [ ] GET single card
   - [ ] GET multiple cards
