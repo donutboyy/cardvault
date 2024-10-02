@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  DATABASE_URL: ${{ secrets.MAIN_DB_URL }}
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
 jobs:
   lint:
