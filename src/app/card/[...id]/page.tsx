@@ -39,11 +39,16 @@ export default function CardDetails() {
         </div>
         <div className="flex-col px-20">
           <h2 className="text-xl py-4">Card Details:</h2>
-          <h3 className="text-lg">Code: {cardQuery.data?.code}</h3>
-          <h3 className="text-lg">Name: {cardQuery.data?.name}</h3>
-          <h3 className="text-lg">Image: {cardQuery.data?.image}</h3>
           <h3 className="text-lg">
-            createdAt: {cardQuery.data?.createdAt.toString()}
+            Default Image: {cardQuery.data?.defaultImage}
+          </h3>
+          <h3 className="text-lg">Name: {cardQuery.data?.name}</h3>
+          <h3 className="text-lg">
+            Special Image: {cardQuery.data?.specialImage}
+          </h3>
+          <h3 className="text-lg">uuid: {cardQuery.data?.uuid}</h3>
+          <h3 className="text-lg">
+            Card Identifier: {cardQuery.data?.cardIdentifier}
           </h3>
         </div>
       </div>
