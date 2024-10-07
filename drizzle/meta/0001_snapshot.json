@@ -1,5 +1,5 @@
 {
-  "id": "36400cd7-7abe-40ff-ba89-67b01faf83cf",
+  "id": "f4654750-673d-4a04-a407-d16c61538e36",
   "prevId": "1a8af5f1-d8ea-42e0-80dd-2f6f6d03f7a4",
   "version": "7",
   "dialect": "postgresql",
@@ -43,7 +43,8 @@
           "name": "set",
           "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "'ARC'"
         }
       },
       "indexes": {
