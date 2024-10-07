@@ -1,7 +1,7 @@
+name: Migrate Production DB
+
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -24,8 +24,6 @@ jobs:
       - name: npm install
         run: npm install --include=dev
 
-      - name: run eslint
-        run: npm run lint
-
-      - name: run prettier
-        run: npm run format
+      - name: migrate db
+        run: |
+          npm run db:migrate
