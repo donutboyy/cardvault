@@ -22,6 +22,7 @@ export const cards = createTable(
     image: text("image").notNull(),
     code: text("code").notNull(),
     createdAt: timestamp("createdAt").defaultNow().notNull(),
+    set: text("set").notNull(),
   },
   (cards) => {
     return {

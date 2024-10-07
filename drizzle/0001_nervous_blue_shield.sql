@@ -1,0 +1,1 @@
+ALTER TABLE "cardvault_cards" ADD COLUMN "set" text NOT NULL;

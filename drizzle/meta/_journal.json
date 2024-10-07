@@ -8,6 +8,13 @@
       "when": 1727410056406,
       "tag": "0000_tan_arachne",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1728290205282,
+      "tag": "0001_nervous_blue_shield",
+      "breakpoints": true
     }
   ]
 }
