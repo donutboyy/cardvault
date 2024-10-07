@@ -8,6 +8,13 @@
       "when": 1727410056406,
       "tag": "0000_tan_arachne",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1728294584042,
+      "tag": "0001_basic_card_data",
+      "breakpoints": true
     }
   ]
 }

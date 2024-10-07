@@ -1,10 +1,4 @@
-import {
-  pgTableCreator,
-  serial,
-  text,
-  timestamp,
-  uniqueIndex,
-} from "drizzle-orm/pg-core";
+import { pgTableCreator, text, uuid } from "drizzle-orm/pg-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -14,18 +8,13 @@ import {
  */
 export const createTable = pgTableCreator((name) => `cardvault_${name}`);
 
-export const cards = createTable(
-  "cards",
-  {
-    id: serial("id").primaryKey(),
-    name: text("name").notNull(),
-    image: text("image").notNull(),
-    code: text("code").notNull(),
-    createdAt: timestamp("createdAt").defaultNow().notNull(),
-  },
-  (cards) => {
-    return {
-      uniqueIdx: uniqueIndex("unique_idx").on(cards.code),
-    };
-  },
-);
+export const cards = createTable("cards", {
+  uuid: uuid("uuid").notNull().primaryKey().defaultRandom(),
+  cardIdentifier: text("cardIdentifier")
+    .default("defaultCardIdentifier")
+    .notNull(),
+  defaultImage: text("defaultImage").default("defaultDefaultImage").notNull(),
+  name: text("name").default("defaultName").notNull(),
+  specialImage: text("specialImage").default("defaultSpecialImage").notNull(),
+  typeText: text("typeText").default("defaultTypeText").notNull(),
+});
