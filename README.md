@@ -13,11 +13,11 @@ MVP: Ability to search up cards and view their data
 - [x] Make it deploy
 - [ ] Set up database with card data
   - [ ] Basic cards schema
-  - [ ] Set up testing environment
-  - [ ] Set up github actions to run tests on PR + coverage
   - [ ] Add rest of the card relations + tests
   - [ ] Upload real card data from fabrary/cards
 - [ ] Create endpoints
+  - [ ] Set up testing environment
+  - [ ] Set up github actions to run tests on PR + coverage
   - [ ] GET single card
   - [ ] GET multiple cards
     - [ ] pagination
@@ -29,6 +29,7 @@ Future:
 - [ ] Error management (sentry)
 - [ ] Deck builder
 - [ ] Collection Management
+- [ ] Rate limit (upstash)
 
 ## Notes
 
