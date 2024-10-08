@@ -10,4 +10,5 @@ export default {
   },
   tablesFilter: ["cardvault_*"],
   verbose: true,
+  casing: "snake_case",
 } satisfies Config;

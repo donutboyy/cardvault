@@ -1,0 +1,68 @@
+{
+  "id": "572142b3-ebbe-40eb-9d40-c8b998cb92b6",
+  "prevId": "c92266f0-8b4a-4d24-8b83-f24aa93f070c",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.cardvault_cards": {
+      "name": "cardvault_cards",
+      "schema": "",
+      "columns": {
+        "uuid": {
+          "name": "uuid",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "card_identifier": {
+          "name": "card_identifier",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'defaultCardIdentifier'"
+        },
+        "default_image": {
+          "name": "default_image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'defaultDefaultImage'"
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'defaultName'"
+        },
+        "special_image": {
+          "name": "special_image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'defaultSpecialImage'"
+        },
+        "type_text": {
+          "name": "type_text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'defaultTypeText'"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
