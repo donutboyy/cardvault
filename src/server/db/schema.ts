@@ -10,11 +10,11 @@ export const createTable = pgTableCreator((name) => `cardvault_${name}`);
 
 export const cards = createTable("cards", {
   uuid: uuid("uuid").notNull().primaryKey().defaultRandom(),
-  cardIdentifier: text("cardIdentifier")
+  cardIdentifier: text("card_identifier")
     .default("defaultCardIdentifier")
     .notNull(),
-  defaultImage: text("defaultImage").default("defaultDefaultImage").notNull(),
+  defaultImage: text("default_image").default("defaultDefaultImage").notNull(),
   name: text("name").default("defaultName").notNull(),
-  specialImage: text("specialImage").default("defaultSpecialImage").notNull(),
-  typeText: text("typeText").default("defaultTypeText").notNull(),
+  specialImage: text("special_image").default("defaultSpecialImage").notNull(),
+  typeText: text("type_text").default("defaultTypeText").notNull(),
 });

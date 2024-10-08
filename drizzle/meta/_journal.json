@@ -15,6 +15,13 @@
       "when": 1728294584042,
       "tag": "0001_basic_card_data",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1728405878658,
+      "tag": "0002_change_column_names_to_snake_case",
+      "breakpoints": true
     }
   ]
 }
