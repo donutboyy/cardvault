@@ -3,7 +3,7 @@ name: Deploy Preview
 on: [pull_request]
 
 env:
-  NEON_DATABASE_USERNAME: ${{ secrets.NEON_DATABASE_USERNAME }}
+  NEON_DATABASE_NAME: ${{ secrets.NEON_DATABASE_NAME }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
   NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
   NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
@@ -26,7 +26,6 @@ jobs:
         with:
           project_id: ${{ env.NEON_PROJECT_ID }}
           branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}
-          username: ${{ env.NEON_DATABASE_USERNAME }}
           database: ${{ env.NEON_DATABASE_NAME }}
           api_key: ${{ env.NEON_API_KEY }}
 
